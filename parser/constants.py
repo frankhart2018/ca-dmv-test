@@ -1,0 +1,5 @@
+USERNAME = "root"
+PASSWORD = "password98@"
+COLLECTION = "ca-dmv"
+DB = "questions"
+CSV_PATH = "ca-dmv-dump.csv"
