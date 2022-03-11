@@ -17,14 +17,14 @@ exports.getQuestion = (req, res, next) => {
 };
 
 exports.postCorrectQuestion = (req, res, next) => {
-    const data = req.body.data;
+    const data = req.body;
 
     const questionsObj = questions.getQuestionsObj();
 
     if (data.status === "correct") {
-        questionsObj.correctQuestion(data.idx);
+        questionsObj.correctQuestion();
     } else {
-        console.log("Incorrect question");
+        questionsObj.wrongQuestion();
     }
 
     res.setHeader('Content-Type', 'application/json');

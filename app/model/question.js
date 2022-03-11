@@ -19,11 +19,18 @@ class Questions {
         return question;
     }
 
-    async correctQuestion(idx) {
-        const question = await this.getQuestionByIdx(idx);
+    async correctQuestion() {
+        const question = await this.getQuestionByIdx(this.currentIdx - 1);
         const currentCorrect = question.correct;
 
-        this.db.collection(constants.COLLECTION).updateOne({idx: idx}, {$set: {correct: currentCorrect + 1}});
+        this.db.collection(constants.COLLECTION).updateOne({idx: this.currentIdx - 1}, {$set: {correct: currentCorrect + 1}});
+    }
+
+    async wrongQuestion() {
+        const question = await this.getQuestionByIdx(this.currentIdx - 1);
+        const currentWrong = question.incorrect;
+
+        this.db.collection(constants.COLLECTION).updateOne({idx: this.currentIdx - 1}, {$set: {incorrect: currentWrong + 1}});
     }
 }
 
@@ -35,7 +42,6 @@ const createQuestionObject = callback => {
 
 const getQuestionsObj = () => {
     if (_questions) {
-        console.log("Found instance");
         return _questions;
     }
 

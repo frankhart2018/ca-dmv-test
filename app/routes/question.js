@@ -6,4 +6,6 @@ const router = express.Router();
 
 router.get('/question', questionController.getQuestion);
 
+router.post('/question/result', questionController.postCorrectQuestion);
+
 module.exports = router;

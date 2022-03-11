@@ -15,9 +15,14 @@ $(document).on('ready', () => {
     });
 
     $("#correct").on('click', () => {
-        let idx = document.getElementsByTagName("title")[0].innerHTML;
-        let data = {"idx": idx, "status": "correct"};
+        let data = {"status": "correct"};
 
-        swal_ajax_post("/question/correct", data);
+        swal_ajax_post("/question/result", data);
+    });
+
+    $("#incorrect").on('click', () => {
+        let data = {"status": "incorrect"};
+
+        swal_ajax_post("/question/result", data);
     });
 });
