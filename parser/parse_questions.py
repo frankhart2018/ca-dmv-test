@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     soup = BeautifulSoup(html_doc, 'html.parser')
 
-    question_divs = soup.find_all("div", class_="SetPageTerm-contentWrapper")
+    question_divs = soup.find_all("div", class_="SetPageTerm-smallSide")
     answer_divs = soup.find_all("div", class_="SetPageTerm-largeSide")
 
     for br in soup.find_all("br"):
