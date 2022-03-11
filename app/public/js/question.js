@@ -17,12 +17,12 @@ $(document).on('ready', () => {
     $("#correct").on('click', () => {
         let data = {"status": "correct"};
 
-        swal_ajax_post("/question/result", data);
+        swal_ajax_post_reload("/question/result", data);
     });
 
     $("#incorrect").on('click', () => {
         let data = {"status": "incorrect"};
 
-        swal_ajax_post("/question/result", data);
+        swal_ajax_post_reload("/question/result", data);
     });
 });
