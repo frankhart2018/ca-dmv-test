@@ -13,4 +13,11 @@ $(document).on('ready', () => {
 
         answerShown = !answerShown;
     });
+
+    $("#correct").on('click', () => {
+        let idx = document.getElementsByTagName("title")[0].innerHTML;
+        let data = {"idx": idx, "status": "correct"};
+
+        swal_ajax_post("/question/correct", data);
+    });
 });

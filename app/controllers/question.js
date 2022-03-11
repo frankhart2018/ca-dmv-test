@@ -15,3 +15,22 @@ exports.getQuestion = (req, res, next) => {
             console.log(err);
         });
 };
+
+exports.postCorrectQuestion = (req, res, next) => {
+    const data = req.body.data;
+
+    const questionsObj = questions.getQuestionsObj();
+
+    if (data.status === "correct") {
+        questionsObj.correctQuestion(data.idx);
+    } else {
+        console.log("Incorrect question");
+    }
+
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({
+        "icon": "success",
+        "title": "Success",
+        "text": "Result updated successfully!",
+    }));
+};

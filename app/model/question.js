@@ -9,10 +9,21 @@ class Questions {
         this.currentIdx = 0;
     }
 
-    getNextQuestion() {
-        const question = this.db.collection(constants.COLLECTION).findOne({idx: this.currentIdx});
+    getQuestionByIdx(idx) {
+        return this.db.collection(constants.COLLECTION).findOne({idx: idx});
+    }
+
+    async getNextQuestion() {
+        const question = await this.getQuestionByIdx(this.currentIdx);
         this.currentIdx++;
         return question;
+    }
+
+    async correctQuestion(idx) {
+        const question = await this.getQuestionByIdx(idx);
+        const currentCorrect = question.correct;
+
+        this.db.collection(constants.COLLECTION).updateOne({idx: idx}, {$set: {correct: currentCorrect + 1}});
     }
 }
 
