@@ -20,6 +20,7 @@ if __name__ == '__main__':
             'answer': answer,
             'correct': 0,
             'incorrect': 0,
+            'idx': i,
         }
 
         collection.insert_one(document)
