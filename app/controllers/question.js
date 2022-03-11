@@ -5,9 +5,10 @@ exports.getQuestion = (req, res, next) => {
     questionsObj.getNextQuestion()
         .then(question => {
             res.render('question', {
-                questionNum: 1,
+                questionNum: question.idx + 1,
                 question: question.question,
-                answer: question.answer, 
+                answer: question.answer,
+                jsFile: 'question.js'
              });
         })
         .catch(err => {

@@ -17,10 +17,18 @@
 
         <div id="answer">
             <h4>Answer</h4>
+            <p>
+                <input type="button" value="Reveal answer" id="reveal-answer">
+            </p>
             <pre id="answer-text">
 <%= answer %>
             </pre>
         </div>
     </div>
+
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/js/fastquery.js"></script>
+    <script type="text/javascript" src="/js/<%= jsFile %>"></script>
 </body>
 </html>
