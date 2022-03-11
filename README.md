@@ -16,6 +16,18 @@ The parsing of HTML to a cleaned CSV can be done using
 user@programmer~:$ python parser/parse_questions.py
 ```
 
+To push the data into MongoDB:
+
+```bash
+ user@programmer~:$ python parser/push_questions.py
+```
+
+To delete the entire collection:
+
+```bash
+user@programmer~:$ python parser/empty_collection.py
+```
+
 ### To run the test taker app
 
 If you are running this for the first time, then install the packages:
