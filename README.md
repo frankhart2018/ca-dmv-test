@@ -1,6 +1,6 @@
 # quizlet-scraper
 
-Scrape quizzes from quizlet and generate self-assessments for them in an interactive web-application interface.
+Scrape quizzes from quizlet and generate self-assessments for them in an interactive web-application interface. 
 
 ## Note
 
