@@ -1,6 +1,6 @@
-# ca-dmv-test
+# quizlet-scraper
 
-Test yourself with questions from Quizlet on California DMV test.
+Scrape quizzes from quizlet and generate self-assessments for them in an interactive web-application interface.
 
 ## Note
 
